@@ -1,0 +1,82 @@
+<html>
+<head>
+    <title>Inserting Data</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<style>
+    .jumbotron{border: 1px solid cyan;margin: 10px 100px;border-radius: 50px;padding: 10px }
+    h2{background: lightcyan;text-align: center;background-color: lightblue;color: blue;
+    margin: 0px 500px;border-radius: 10px}
+   a{margin: 10px;color: white;font-size: 20px;}
+    button{font-family: Tahoma;margin: 0px 80px}
+</style>
+<body>
+
+
+<b><h2>CURD Operations</h2></b>
+<div class="jumbotron">
+    <center>
+    <button class=" btn btn-success"><a href="/insert/">Create</a></button>
+    <button class="btn btn-success"><a href="/update/">Update</a></button>
+    <button class="btn btn-success"><a href="/retrieve/">Retrieve</a></button>
+    <button class="btn btn-success"><a href="/delete/">Delete</a></button>
+    </center>
+</div><br><br>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="offset-sm-3 col-sm-6">
+            <h3>Enter Product Details</h3>
+            <form method="post" style="border: 2px solid chocolate;padding: 30px">
+                {% csrf_token %}
+                <label>Enter Product Id:</label>
+                <input type="number" name="product_id" class="form-control" required>
+
+                <label>Enter Product Name:</label>
+                <input type="text" name="product_name" class="form-control" required>
+
+                <label>Enter Product Cost:</label>
+                <input type="number" name="product_cost" class="form-control" required>
+
+                <label>Enter Product Class:</label>
+                <input type="text" name="product_class" class="form-control" required>
+
+                <label>Enter No of Products</label>
+                <input type="number" name="no_of_products" class="form-control" required>
+
+                <label>Manfacture Date</label>
+                <input type="date" name="manfacture_date" class="form-control" required>
+
+                <label>Expiry Date</label>
+                <input type="date" name="expiry_date" class="form-control"
+                       required value="2019-12-13" readonly>
+
+                <label>Enter Customer Name:</label>
+                <input type="text" name="customer_name" class="form-control" required>
+
+                <label>Customer Mobile Number:</label>
+                <input type="number" name="mobile" class="form-control" required>
+
+                <label>Customer Email-Id</label>
+                <input type="email" name="email" class="form-control" required>
+
+                <center>
+                <input type="reset" value="Clear" class="btn btn-danger" style="margin-right: 100px">
+                <input type="submit" value="Send" class="btn btn-success">
+                </center>
+            </form>
+            <a href="/retrieve/">To See ProductDetails</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
